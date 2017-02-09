@@ -1,0 +1,13 @@
+# zabbix monitoring
+server {
+	listen       80;
+	server_name  localhost;
+
+	# nginx agent monitoring
+	location /status {
+		stub_status on;
+		access_log off;
+		allow 127.0.0.1;
+		deny all;
+	}
+}
